@@ -181,10 +181,10 @@ class SlideCSSProsCons extends PureComponent {
                 data-rotate-z={'180'}
                 {...props}
             >
-                <p className={classes.title}>
-                    <div className={classes.cssBenefitsText}>Benefits of CSS</div>
-                    <div className={classes.cssProsConsText}>Pros/Cons of CSS</div>
-                </p>
+                <div className={classes.title}>
+                    <p className={classes.cssBenefitsText}>Benefits of CSS</p>
+                    <p className={classes.cssProsConsText}>Pros/Cons of CSS</p>
+                </div>
                 <img src="/img/slides/memeface.jpg" className={classes.memeFaceImg}/>
                 <div className={classes.proConsWrapper}>
                     <ul className={`${classes.list} ${classes.prosList}`}>

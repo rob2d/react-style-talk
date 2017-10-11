@@ -49,17 +49,18 @@ const styleSheet = {
         color : 'rgb(200,200,200)'
     },
     bonusRound : {
-        
+        width : '400px',
+        height : 'auto'
     }
 };
 
-class SlideReactJSSBenefits extends PureComponent {
+class SlideBonusRound extends PureComponent {
     render () {
         const { classes, ...props } = this.props;
 
         return (
             <PresentationSlide 
-                data-x={'24000'}
+                data-x={'32000'}
                 data-y={'10000'}
                 data-z={'1800'}
                 data-scale={'2'}
@@ -69,24 +70,15 @@ class SlideReactJSSBenefits extends PureComponent {
             >
             <img src="img/slides/bonusround.png" className={classes.bonusRound}/>
             <p className={classes.title}>
-                <div className={classes.cssBenefitsText}>ReactJSS</div>
+                Bonus Round
             </p>
-            <p className={classes.benefitsOfReactJSS}>
-                (taken from <b>https://github.com/cssinjs/react-jss)
-            </b></p>
             <div className={classes.prosWrapper}>
                 <ul className={`${classes.list} ${classes.prosList}`}>
                     <li className={classes.listItem1}>
-                        Theming support out of the box.
+                        This presentation was created using React, Redux, ImpressJS, and ReactJSS
                     </li>
                     <li className={classes.listItem2}>
-                        Lazy evaluation - sheet is created only when component will mount.
-                    </li>
-                    <li className={classes.listItem3}>
-                        Auto attach/detach - sheet will be rendered to the DOM when component is about to mount and will be removed when no element needs it.
-                    </li>
-                    <li className={classes.listItem4}>
-                        A Style Sheet gets shared between all elements                   
+                        Download on Github for example @ http://www.github.com/rob2d/
                     </li>
                 </ul>   
             </div>         
@@ -95,4 +87,4 @@ class SlideReactJSSBenefits extends PureComponent {
     }
 }
 
-export default injectSheet(styleSheet)(SlideReactJSSBenefits);
+export default injectSheet(styleSheet)(SlideBonusRound);

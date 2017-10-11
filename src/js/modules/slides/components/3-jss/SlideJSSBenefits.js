@@ -70,12 +70,12 @@ class SlideBrowserMustFindWaldo extends PureComponent {
                         Allows for function values (+Cache-ing)<br/><br/>
                         <pre className={classes.formattedCode}>
                         {`playingWheresWaldo : {
-    opacity : ({ currentStepNumber })=> (
-        currentStepNumber == BROWSER_PLAYS_WHERES_WALDO ? 1 : 0
-    ),
-    transition : 'opacity 0.25s ease-in 3s',
-    //...
-}`}
+                            opacity : ({ currentStepNumber })=> (
+                                currentStepNumber == BROWSER_PLAYS_WHERES_WALDO ? 1 : 0
+                            ),
+                            transition : 'opacity 0.25s ease-in 3s',
+                            //...
+                        }`}
                         </pre>
                     </li>
                     <li className={classes.listItem4}>

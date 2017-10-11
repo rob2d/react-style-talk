@@ -30,7 +30,6 @@ class Presentation extends PureComponent {
         impress.goto(stepNumber);
     };
     updateRenderedChildren = (nextProps, nextState)=> {
-        console.error('updateRenderedChildren');
         const renderedChildren = [];
         const { 
             children, 
@@ -60,6 +59,7 @@ class Presentation extends PureComponent {
                     (currentChildIndex >= nextState.stepNumber - 2) && 
                     (currentChildIndex <= nextState.stepNumber + 2)
                 );*/
+                injectedProps.key = 'slide' + injectedProps.stepNumber;
                 renderedChildren.push(React.cloneElement(child, injectedProps));  
             }
             // inject relevant props into slides.
@@ -74,6 +74,7 @@ class Presentation extends PureComponent {
                         {...injectedProps},
                         { 
                             stepNumber : currentChildIndex+j,
+                            key : 'slide'+currentChildIndex+j+'sub'
                             /*isSlideActive : (
                                 (subSlideIndex >= nextState.stepNumber - 2) && 
                                 (subSlideIndex < nextState.stepNumber)
@@ -113,13 +114,11 @@ class Presentation extends PureComponent {
         const stepNumber = getStepNumber(event.target.id);
         // find the child slide with the currently entered step number
         // or else if we can't assert that, throw an error
-        console.log('on step enter ->', stepNumber);
         if(typeof this.renderedChildren[stepNumber-1] != 'object') {
             throw new Error(`There is no child PresentationSlide defined for step number ${stepNumber}`);
         }
 
         if(this.renderedChildren[stepNumber-1].onStepEnter) {
-            console.log('this.RenderedChild ->', this.renderedChildren[stepNumber-1]);
             this.renderedChildren[stepNumber-1].onStepEnter(event);            
         }
 

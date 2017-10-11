@@ -20,20 +20,15 @@ const styleSheet = {
 
 class SlideIsCSSTheFinalSolution extends PureComponent {
     componentWillUpdate(newProps, newState) {
-        console.log('newProps.currentStepNumber ->', newProps.currentStepNumber);
-        console.log('newProps.stepNumber ->', newProps.stepNumber);
         if(newProps.currentStepNumber == newProps.stepNumber && !this.isSlideActive) {
             this.isSlideActive = true;
             const bg = document.querySelector('#background');
             bg.classList.add('black');
-            console.log('slideActive true');
         }
         else if(newProps.currentStepNumber != newProps.stepNumber && this.isSlideActive) {
             this.isSlideActive = false;
             const bg = document.querySelector('#background');
             bg.classList.remove('black');
-            
-            console.log('slideActive false');
         }
     }
     render () {

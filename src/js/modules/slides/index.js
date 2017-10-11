@@ -14,6 +14,9 @@ import SlideBrowserPlaysWheresWaldo from './components/3-jss/SlideBrowserPlaysWa
 import SlideBrowserMustFindWaldo from './components/3-jss/SlideBrowserMustFindWaldo'
 import SlideJSSBenefits from './components/3-jss/SlideJSSBenefits'
 import SlideReactJSSBenefits from './components/3-jss/SlideReactJSSBenefits'
+import SlideReactJSSUsage from './components/3-jss/SlideReactJSSUsage'
+import SlideBonusRound from './components/3-jss/SlideBonusRound'
+import SlideEnd from './components/3-jss/SlideEnd'
 
 export default  {
     SlideTitleScreen,
@@ -31,5 +34,8 @@ export default  {
     SlideBrowserPlaysWheresWaldo,
     SlideBrowserMustFindWaldo,
     SlideJSSBenefits,
-    SlideReactJSSBenefits
+    SlideReactJSSBenefits,
+    SlideReactJSSUsage,
+    SlideBonusRound,
+    SlideEnd
 }

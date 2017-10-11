@@ -22,7 +22,10 @@ import {
     SlideBrowserPlaysWheresWaldo,
     SlideBrowserMustFindWaldo,
     SlideJSSBenefits,
-    SlideReactJSSBenefits
+    SlideReactJSSBenefits,
+    SlideReactJSSUsage,
+    SlideBonusRound,
+    SlideEnd
 } from 'modules/slides'
 
 const styles =
@@ -144,11 +147,14 @@ class MainApp extends PureComponent
                         <SlideSoDoWeAlwaysNeedToLose />
                         <SlideTheresAlwaysHope />
                         <SlideShinyNewTech />
-                        <SlideWhatIsJSS/>
+                        <SlideWhatIsJSS />
                         <SlideBrowserPlaysWheresWaldo />
                         <SlideBrowserMustFindWaldo />
                         <SlideJSSBenefits stepSpanCount={5} />
                         <SlideReactJSSBenefits stepSpanCount={5} />
+                        <SlideReactJSSUsage stepSpanCount={7} />
+                        <SlideBonusRound />
+                        <SlideEnd />
                     </Presentation>
                 </div>
         );

@@ -25,6 +25,7 @@ export const BROWSER_PLAYS_WHERES_WALDO = 43;
 export const BROWSER_MUST_FIND_WALDO = 44;
 export const JSS_BENEFITS = 45;
 export const REACT_JSS_BENEFITS = 50;
+export const REACT_JSS_USAGE = 55;
 
 
 export default { 
@@ -47,5 +48,6 @@ export default {
     BROWSER_PLAYS_WHERES_WALDO,
     BROWSER_MUST_FIND_WALDO,
     JSS_BENEFITS,
-    REACT_JSS_BENEFITS
+    REACT_JSS_BENEFITS,
+    REACT_JSS_USAGE
 }

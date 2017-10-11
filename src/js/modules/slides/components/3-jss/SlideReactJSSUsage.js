@@ -7,7 +7,7 @@ import createListItemSlideRules from 'tools/slide-styles/getListItemSlideRules'
 
 
 const Steps = {
-    SLIDE_START : StepEnums.REACT_JSS_BENEFITS
+    SLIDE_START : StepEnums.REACT_JSS_USAGE
 };
 
 const getListItemRules = (itemNumber)=> {
@@ -19,14 +19,20 @@ const getListItemRules = (itemNumber)=> {
             (currentStepNumber < Steps.PRO_CON_SPLIT) ? '18pt' : '14pt'
         ),
         transition : listItemRules.transition + 
-                        ', font-size 0.35s ease-in'
+                        ', font-size 0.35s ease-in',
+        display : ({ currentStepNumber })=> (
+            currentStepNumber > Steps.SLIDE_START ? 'block' : 'none'
+        )
     })
 };
 
 
 const styleSheet = {
     title : {
-        fontSize : '32pt'
+        fontSize : '32pt',
+        display : ({ currentStepNumber})=>(
+            currentStepNumber > Steps.SLIDE_START ? 'none' : 'block'
+        )
     },
     list : {
         position : 'relative',
@@ -41,14 +47,39 @@ const styleSheet = {
     listItem2 : getListItemRules(2),
     listItem3 : getListItemRules(3),
     listItem4 : getListItemRules(4),
+    listItem5 : getListItemRules(5),
+    listItem6 : getListItemRules(6),
     formattedCode : {
         textAlign : 'left',
-        fontSize : '20pt'
+        fontSize : '14pt'
     },
     benefitsOfReactJSS : {
-        color : 'rgb(200,200,200)'
+        color : 'rgb(200,200,200)',
+        display : ({ currentStepNumber})=>(
+            currentStepNumber > Steps.SLIDE_START ? 'none' : 'block'
+        )
     }
 };
+
+const styles = {
+    button: {
+      background: props => props.color,
+      margin : '32px'
+    },
+    label: {
+      fontWeight: 'bold'
+    }
+  };         
+  
+  const Button = ({classes, children}) => (
+    <button className={classes.button}>
+      <span className={classes.label}>
+        {children}
+      </span>
+    </button>
+  );         
+
+  const ButtonExample = injectSheet(styles)(Button);
 
 class SlideReactJSSBenefits extends PureComponent {
     render () {
@@ -56,7 +87,7 @@ class SlideReactJSSBenefits extends PureComponent {
 
         return (
             <PresentationSlide 
-                data-x={'24000'}
+                data-x={'28000'}
                 data-y={'10000'}
                 data-z={'1800'}
                 data-scale={'2'}
@@ -65,7 +96,7 @@ class SlideReactJSSBenefits extends PureComponent {
                 {...props}
             >
             <p className={classes.title}>
-                <div className={classes.cssBenefitsText}>ReactJSS</div>
+                <div className={classes.cssBenefitsText}>Usage</div>
             </p>
             <p className={classes.benefitsOfReactJSS}>
                 (taken from <b>https://github.com/cssinjs/react-jss)
@@ -73,16 +104,51 @@ class SlideReactJSSBenefits extends PureComponent {
             <div className={classes.prosWrapper}>
                 <ul className={`${classes.list} ${classes.prosList}`}>
                     <li className={classes.listItem1}>
-                        Theming support out of the box.
+                    <pre className={classes.formattedCode}>
+                        {
+`import React from 'react'
+import injectSheet from 'react-jss'`}
+                        </pre>
                     </li>
                     <li className={classes.listItem2}>
-                        Lazy evaluation - sheet is created only when component will mount.
+                    <pre className={classes.formattedCode}>{
+`const styles = {
+    button: {
+      background: props => props.color,
+      margin : '32px'
+    },
+    label: {
+      fontWeight: 'bold'
+    }
+ }`                }</pre>
                     </li>
                     <li className={classes.listItem3}>
-                        Auto attach/detach - sheet will be rendered to the DOM when component is about to mount and will be removed when no element needs it.
+                        <pre className={classes.formattedCode}>{
+`const Button = ({classes, children}) => (
+    <button className={classes.button}>
+      <span className={classes.label}>
+        {children}
+      </span>
+    </button>
+  )
+  
+  `                   }</pre>
                     </li>
                     <li className={classes.listItem4}>
-                        A Style Sheet gets shared between all elements                   
+                        <pre className={classes.formattedCode}>{`export default injectSheet(styles)(Button)`
+                        }</pre>
+                    </li>
+                    <li className={classes.listItem5}>
+                    <pre className={classes.formattedCode}>{
+`<ButtonExample color={"rgb(255,255,100)"}>w00t</ButtonExample> 
+<ButtonExample color={"rgb(255,100,200)"}>just</ButtonExample>  
+<ButtonExample color={"rgb(100,255,255)"}>testing</ButtonExample> `
+                    }</pre>
+                    </li>
+                    <li className={classes.listItem6}>
+                        <ButtonExample color={"rgb(255,255,100)"}>w00t</ButtonExample> 
+                        <ButtonExample color={"rgb(255,100,200)"}>just</ButtonExample>  
+                        <ButtonExample color={"rgb(100,255,255)"}>testing</ButtonExample>                    
                     </li>
                 </ul>   
             </div>         
