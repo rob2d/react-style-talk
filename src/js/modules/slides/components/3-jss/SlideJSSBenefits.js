@@ -64,7 +64,7 @@ class SlideBrowserMustFindWaldo extends PureComponent {
                        Attach and detach sheets easily to CSSOM
                     </li>
                     <li className={classes.listItem2}>
-                        Uses Cache-ing to rebuild sheets
+                        Uses Cache-ing to re-use sheets
                     </li>
                     <li className={classes.listItem3}>
                         Allows for function values (+Cache-ing)<br/><br/>

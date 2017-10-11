@@ -64,9 +64,7 @@ class SlideReactJSSBenefits extends PureComponent {
                 data-rotate-y={'180'}
                 {...props}
             >
-            <div> className={classes.title}>
-                <p className={classes.cssBenefitsText}>ReactJSS</p>
-            </div>
+            <p className={classes.title}>ReactJSS</p>
             <p className={classes.benefitsOfReactJSS}>
                 (taken from <b>https://github.com/cssinjs/react-jss)
             </b></p>

@@ -78,7 +78,7 @@ class SlideBonusRound extends PureComponent {
                         This presentation was created using React, Redux, ImpressJS, and ReactJSS
                     </li>
                     <li className={classes.listItem2}>
-                        Download on Github for example @ http://www.github.com/rob2d/
+                        Download on Github for example @ https://github.com/rob2d/react-style-talk
                     </li>
                 </ul>   
             </div>         

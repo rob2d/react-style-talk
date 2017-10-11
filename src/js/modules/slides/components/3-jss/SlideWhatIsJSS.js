@@ -9,6 +9,13 @@ import getListItemSlideRules from 'tools/slide-styles/getListItemSlideRules'
 const styleSheet = {
     alwaysWinLoseQ : {
         fontSize : '40pt'
+    },
+    listItem : {
+    },
+    list : {
+        position : 'relative',
+        listStyleType : 'none',
+        padding : '16px'
     }
 };
 
@@ -18,20 +25,21 @@ class SlideWhatIsJSS extends PureComponent {
 
         return (
             <PresentationSlide 
-                data-x={'18000'}
+                data-x={'40000'}
                 data-y={'8000'}
-                data-z={'1800'}
-                data-scale={'2'}
+                data-scale={'3'}
                 data-rotate-x={'270'}
                 data-rotate-y={'180'}
                 {...props}
             >
-            <li className={classes.listItem1}>
-                CSS in JS
-            </li>
-            <li className={classes.listItem2}>
-                JavaScript API to communicate directly with CSSOM
-            </li>
+            <ul>
+                <li className={classes.listItem}>
+                    CSS in JS
+                </li>
+                <li className={classes.listItem}>
+                    JavaScript API to communicate directly with CSSOM
+                </li>
+            </ul>
             </PresentationSlide>
         );
     }

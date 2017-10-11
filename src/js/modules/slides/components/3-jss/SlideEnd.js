@@ -13,6 +13,11 @@ const styleSheet = {
     },
     title : {
         fontSize : '40pt'
+    },
+    stepEnd : {
+        display : ({ currentStepNumber })=> (
+            currentStepNumber == 63 ? 'block' : 'none'
+        )
     }
 };
 
@@ -30,10 +35,12 @@ class SlideEnd extends PureComponent {
                 data-rotate-y={'180'}
                 {...props}
             >
-            <p className={classes.title}>Conclusion</p>
+            <div className={classes.stepEnd}>
+                <p className={classes.title}>Conclusion</p>
                 <img src="img/logos/css3.png" className={classes.logo}/>  
                 <img src="img/logos/js.png" className={classes.logo}/>
                 <img src="img/logos/jss.png" className={classes.logo}/>       
+                </div>
             </PresentationSlide>
         );
     }
